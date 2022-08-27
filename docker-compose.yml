@@ -2,7 +2,7 @@ version: "3.8"
 services:
 
     db:
-        image: mysql
+        image: mariadb:10.9
         container_name: db_docker_symfony
         restart: always
         volumes:
