@@ -3,7 +3,8 @@ console:
 
 install:
 	docker-compose build
-	docker exec www_docker_symfony composer create-project symfony/website-skeleton "6.1.*" project
+	docker-compose up -d
+	docker exec www_docker_symfony composer create-project symfony/website-skeleton --version="6.1.*" project
 
 start:
 	docker-compose up -d
