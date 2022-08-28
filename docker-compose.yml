@@ -3,7 +3,6 @@ services:
 
     db:
         image: mariadb:10.9
-        container_name: db_docker_symfony
         restart: always
         volumes:
             - db-data:/var/lib/mysql
@@ -14,7 +13,6 @@ services:
 
     phpmyadmin:
         image: phpmyadmin
-        container_name: phpmyadmin_docker_symfony
         restart: always
         depends_on:
             - db
@@ -27,7 +25,6 @@ services:
 
     maildev:
         image: maildev/maildev
-        container_name: maildev_docker_symfony
         command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
         ports:
           - "8081:80"
@@ -35,9 +32,8 @@ services:
         networks:
             - dev
 
-    www:
+    symfony:
         build: php
-        container_name: www_docker_symfony
         ports:
           - "8741:80"
         volumes:
