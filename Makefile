@@ -10,6 +10,7 @@ start:
 	docker-compose up -d
 	@echo "Sf at http://127.0.0.1:8080/"
 	@echo "PMA at http://127.0.0.1:9080/"
+	@echo "Maildev at http://127.0.0.1:7080/"
 
 stop:
 	docker-compose down --remove-orphans
