@@ -23,4 +23,8 @@ RUN  docker-php-ext-configure \
 \
     &&  pecl install apcu && docker-php-ext-enable apcu
 
+RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
+RUN apt-get -y install nodejs
+RUN npm install
+
 WORKDIR /var/www/
