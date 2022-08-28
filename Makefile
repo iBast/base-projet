@@ -1,10 +1,10 @@
 console:
-	docker exec -it www_docker_symfony bash
+	docker exec -it symfony bash
 
 install:
 	docker-compose build
 	docker-compose up -d
-	docker exec symfony composer create-project symfony/website-skeleton --version="6.1.*" project
+	docker-compose exec symfony composer create-project symfony/website-skeleton:"6.1.*" project
 
 start:
 	docker-compose up -d
